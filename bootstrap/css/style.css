@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+body{
+	background: #001122;
+}
+
+.txt{
+	margin-bottom: 20px;
+	color: #5bc0de;
+	font-family: 'Oswald', sans-serif;
+	font-size: 3em;
+}
+
+form{
+	margin-top: 40%;
+	border: 2px solid #5bc0de;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 40px;
+	border-radius: 8px !important;
+}
+.input{
+	border-radius: 2px;
+}
+.mensagem{
+	color: #F1F1F1;
+	font-family: 'Oswald', sans-serif;
+	margin-top: 10px;
+	font-size: 14pt;
+}
+
+@media(max-width: 768px){
+   form{
+   	  margin-bottom: 90px;
+   }
+}
