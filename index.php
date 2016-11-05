@@ -22,6 +22,10 @@
 				<div class="form-group">
 					<input id="input-pass" class="form-control input-lg input" type="password" name="pass" placeholder="Senha de 8 a 18 caracteres">
 				</div>
+				<?php session_start(); ?>
+				<?php $_SESSION['_token'] = md5(rand(58, 78888)); ?>
+				<?php $_token = $_SESSION['_token']; ?>
+				<input type="hidden" id="input-token" value="<?php echo $_token; ?>">
 				<button type="button" onclick="entrar()" class="btn btn-lg btn-block active btn-info">Entrar</button>
 			</form>
 

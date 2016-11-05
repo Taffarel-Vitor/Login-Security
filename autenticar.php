@@ -2,14 +2,16 @@
 require_once 'classes/AutenticaUsers.php';
 $user = filter_input(INPUT_GET, 'user',FILTER_DEFAULT);
 $pass = filter_input(INPUT_GET, 'pass',FILTER_DEFAULT);
+$_token = filter_input(INPUT_GET, '_token',FILTER_DEFAULT);
 
 
 //SE FOR USAR O METHOD POST
 // $user = filter_input(INPUT_POST, 'user',FILTER_DEFAULT);
 // $pass = filter_input(INPUT_POST, 'pass',FILTER_DEFAULT);
+//$_token = filter_input(INPUT_POST, '_token',FILTER_DEFAULT);
 
 
-$users = new AutenticaUsers($user, $pass);
+$users = new AutenticaUsers($user, $pass, $_token);
 
 
 

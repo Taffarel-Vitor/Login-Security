@@ -8,10 +8,11 @@ class AutenticaUsers extends Conn
 	private $pass;
 
 
-	public function AutenticaUsers($user, $pass)
+	public function AutenticaUsers($user, $pass, $_token)
 	{
 		  $this->user = $user;
 		  $this->pass = $pass;
+		  $this->_token = $_token;
 		  $this->validar();
           $this->autenticar();
 		  // echo $this->user = $user;
@@ -47,7 +48,12 @@ class AutenticaUsers extends Conn
          requisitada do seu formulário*/
 
 	     if($local."/login-security/index.php" === "localhost/login-security/index.php"){
-
+	     	    session_start();
+	     	    $_token = $_SESSION['_token'];
+                if($_token != $this->_token){
+                  echo json_encode(["status" => false, "msg"=>"O formulário vem de uma fonte não confiável !"]);
+		    		exit();
+                }
 		    	if(empty($this->user) or empty($this->pass)){
 		    		echo json_encode(["status" => false, "msg"=>"Esses campos não pode ser vazios !"]);
 		    		exit();
